@@ -3,6 +3,8 @@ kind: Subscription
 metadata:
   name: ibm-aiops-orchestrator
   namespace: {{ .Values.cpwaiops.namespace }}
+  annotations:
+    argocd.argoproj.io/sync-wave: “20”
 spec:
   channel: {{ .Values.cpwaiops.channel }}
   installPlanApproval: Automatic
